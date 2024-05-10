@@ -51,7 +51,7 @@ const Signin = () => {
               Sign in
             </button>
           </div>
-          <p className="text-sm text-gray-400 mb-2">Don't have an account?</p>
+          <p className="text-sm text-gray-400 mb-2">Do not have an account?</p>
           <a href="/signup" className="text-blue-500 hover:underline">
             Sign up
           </a>
