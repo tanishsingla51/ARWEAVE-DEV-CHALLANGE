@@ -1,39 +1,44 @@
-import { BottomWarning } from "../components/BottomWarning";
-import { Button } from "../components/Button";
-import { Heading } from "../components/Heading";
-import { InputBox } from "../components/InputBox";
-import { SubHeading } from "../components/SubHeading";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const Signin = () => {
+const CreatePost = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const navigate = useNavigate();
+
   return (
-    <div className="bg-slate-300 h-screen flex justify-center">
-      <div className="flex flex-col justify-center">
-        <div className="rounded-lg bg-white w-80 text-center p-2 h-max px-4">
-          <Heading label={"Create Post"} />
-          <SubHeading label={"Create a post with a title and a description"} />
-          <InputBox
-            Change={(e) => {
-              setTitle(e.target.value);
-            }}
-            placeholder="title"
-            label={"Title"}
-          />
-          <InputBox
-            Change={(e) => {
-              setDescription(e.target.value);
-            }}
-            placeholder="description"
-            label={"Description"}
-          />
-          <div className="pt-4">
-            <Button
-              Click={async () => {
+    <div className="bg-black text-white h-screen flex justify-center items-center">
+      <div className="flex flex-col items-center">
+        <div className="rounded-lg bg-gray-800 shadow-lg p-8">
+          <h1 className="text-3xl font-semibold text-white mb-4">
+            Create Post
+          </h1>
+          <p className="text-sm text-gray-400 mb-4">
+            Create a post with a title and a description
+          </p>
+          <div className="mb-4">
+            <input
+              type="text"
+              className="w-full border border-gray-700 rounded-md px-3 py-2 bg-gray-900 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500"
+              placeholder="Title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </div>
+          <div className="mb-4">
+            <textarea
+              className="w-full border border-gray-700 rounded-md px-3 py-2 bg-gray-900 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500"
+              rows="4"
+              placeholder="Description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            ></textarea>
+          </div>
+          <div className="mb-4">
+            <button
+              className="w-full bg-blue-500 text-white font-semibold px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+              onClick={async () => {
                 await axios.post(
                   "http://localhost:4000/api/v2/post/create",
                   {
@@ -46,11 +51,11 @@ const Signin = () => {
                     },
                   }
                 );
-
                 navigate("/dashboard");
               }}
-              label={"Create Post"}
-            />
+            >
+              Create Post
+            </button>
           </div>
         </div>
       </div>
@@ -58,4 +63,4 @@ const Signin = () => {
   );
 };
 
-export default Signin;
+export default CreatePost;

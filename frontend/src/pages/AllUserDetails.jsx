@@ -23,14 +23,14 @@ const AllUserDetails = () => {
   }, [filter]);
 
   return (
-    <div>
+    <div className="bg-black text-white">
       <div className="font-bold mt-6 text-lg">Users</div>
       <div className="my-2">
         <input
           onChange={(e) => setFilter(e.target.value)}
           type="text"
           placeholder="Search users..."
-          className="w-full px-2 py-1 border rounded border-slate-200"
+          className="w-full px-2 py-1 border rounded border-gray-700 text-white"
         />
       </div>
       <div>
@@ -46,14 +46,14 @@ function User({ user }) {
   return (
     <div className="flex justify-between items-center border-b py-2">
       <div className="flex items-center space-x-4">
-        <div className="rounded-full h-12 w-12 bg-gray-200 flex justify-center items-center">
+        <div className="rounded-full h-12 w-12 bg-gray-200 flex justify-center items-center text-black">
           {user.firstName[0]}
         </div>
         <div>
-          <p className="text-lg font-semibold">
+          <p className="text-lg font-semibold text-white">
             {user.firstName} {user.lastName}
           </p>
-          <p className="text-gray-600">{user.username}</p>
+          <p className="text-gray-400">{user.username}</p>
         </div>
         <Follow otherUserId={user._id} />
       </div>

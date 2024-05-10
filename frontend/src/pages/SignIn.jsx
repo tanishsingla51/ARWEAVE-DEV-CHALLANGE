@@ -1,8 +1,3 @@
-import { BottomWarning } from "../components/BottomWarning";
-import { Button } from "../components/Button";
-import { Heading } from "../components/Heading";
-import { InputBox } from "../components/InputBox";
-import { SubHeading } from "../components/SubHeading";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -11,29 +6,37 @@ const Signin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+
   return (
-    <div className="bg-slate-300 h-screen flex justify-center">
-      <div className="flex flex-col justify-center">
-        <div className="rounded-lg bg-white w-80 text-center p-2 h-max px-4">
-          <Heading label={"Sign in"} />
-          <SubHeading label={"Enter your credentials to access your account"} />
-          <InputBox
-            Change={(e) => {
-              setUsername(e.target.value);
-            }}
-            placeholder="abc@gmail.com"
-            label={"Email"}
-          />
-          <InputBox
-            Change={(e) => {
-              setPassword(e.target.value);
-            }}
-            placeholder="123456"
-            label={"Password"}
-          />
-          <div className="pt-4">
-            <Button
-              Click={async () => {
+    <div className="bg-black text-white h-screen flex justify-center items-center">
+      <div className="flex flex-col items-center">
+        <div className="rounded-lg bg-gray-800 shadow-lg p-8">
+          <h1 className="text-3xl font-semibold text-white mb-4">Sign in</h1>
+          <p className="text-sm text-gray-400 mb-4">
+            Enter your credentials to access your account
+          </p>
+          <div className="mb-4">
+            <input
+              type="email"
+              className="w-full border border-gray-700 rounded-md px-3 py-2 bg-gray-900 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500"
+              placeholder="abc@gmail.com"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div className="mb-4">
+            <input
+              type="password"
+              className="w-full border border-gray-700 rounded-md px-3 py-2 bg-gray-900 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500"
+              placeholder="123456"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div className="mb-4">
+            <button
+              className="w-full bg-blue-500 text-white font-semibold px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+              onClick={async () => {
                 const response = await axios.post(
                   "http://localhost:4000/api/v2/user/signin",
                   {
@@ -42,17 +45,16 @@ const Signin = () => {
                   }
                 );
                 localStorage.setItem("token", response.data.token);
-
                 navigate("/dashboard");
               }}
-              label={"Sign in"}
-            />
+            >
+              Sign in
+            </button>
           </div>
-          <BottomWarning
-            label={"Don't have an account?"}
-            buttonText={"Sign up"}
-            to={"/signup"}
-          />
+          <p className="text-sm text-gray-400 mb-2">Don't have an account?</p>
+          <a href="/signup" className="text-blue-500 hover:underline">
+            Sign up
+          </a>
         </div>
       </div>
     </div>

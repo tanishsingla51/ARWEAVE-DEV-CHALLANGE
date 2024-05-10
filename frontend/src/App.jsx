@@ -9,18 +9,18 @@ import AllUserDetails from "./pages/AllUserDetails";
 
 function App() {
   return (
-    <>
+    <div className="bg-black">
       <BrowserRouter>
         <Routes>
           <Route path="/users" element={<AllUserDetails />} />
           <Route path="/create" element={<CreatePost />} />
           <Route path="/update" element={<UpdateUser />} />
           <Route path="/dashboard" element={<DashBoard />} />
-          <Route path="/signin" element={<Signin />} />
+          <Route path="/" element={<Signin />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 

@@ -1,3 +1,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* Global Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: black; /* Dark background color */
+  color: #cbd5e0; /* Text color */
+}
+
+/* Links */
+a {
+  color: #63b3ed; /* Link color */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #4299e1; /* Hover color */
+}
+
+/* Input and Textarea */
+input[type="text"],
+textarea {
+  padding: 0.5rem;
+  border: 1px solid #4a5568; /* Input border color */
+  border-radius: 0.25rem;
+  background-color: #2d3748; /* Input background color */
+  color: #cbd5e0; /* Input text color */
+  transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #63b3ed; /* Focus border color */
+}
+
+/* Buttons */
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #4a5568; /* Button background color */
+  color: #cbd5e0; /* Button text color */
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #2c5282; /* Button hover background color */
+}
