@@ -206,12 +206,18 @@ router.post("/follow", authMiddleware, async (req, res) => {
     }
 
     // Add the user to follow to the current user's followers list
-    const currentUser = await User.findById(req.userId);
-    currentUser.following.push(otherUserId);
-    userToFollow.followers.push(req.userId);
+    if (!userToFollow.followers.includes(req.userId)) {
+      const currentUser = await User.findById(req.userId);
+      currentUser.following.push(otherUserId);
+      userToFollow.followers.push(req.userId);
 
-    await currentUser.save();
-    await userToFollow.save();
+      await currentUser.save();
+      await userToFollow.save();
+    } else {
+      return res.status(400).json({
+        message: `User already followed`,
+      });
+    }
 
     return res.status(200).json({ message: "User followed successfully" });
   } catch (error) {
