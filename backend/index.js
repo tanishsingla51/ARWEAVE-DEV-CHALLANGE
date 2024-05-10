@@ -8,13 +8,7 @@ dotenv.config({
   path: "./.env",
 });
 
-app.use(
-  cors({
-    origin: "https://stuneckt-backend-assignment.vercel.app/",
-    methods: ["GET", "POST"],
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(express.json());
 
 app.use("/api/v2", mainRouter);
