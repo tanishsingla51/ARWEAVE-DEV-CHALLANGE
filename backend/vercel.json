@@ -1,0 +1,45 @@
+{
+    "version":2,
+    "builds":[
+      {
+        "src": "backend/index.js",
+        "use": "@vercel/node"
+      }
+    ],
+        
+    "routes":[
+      {
+        "src": "/api/v2/user/bulk",
+        "methods": ["GET"],
+        "dest": "backend/routes/server.js"
+      },
+      {
+        "src": "/api/v2/user/update",
+        "methods": ["PUT"],
+        "dest": "backend/routes/server.js"
+      },
+      {
+        "src": "/api/v2/post/bulk",
+        "methods": ["GET"],
+        "dest": "backend/routes/server.js"
+      },
+      {
+        "src": "/api/v2/post/create",
+        "methods": ["POST"],
+        "dest": "backend/routes/server.js"
+        },
+        {
+            "src": "/api/v2/user/signup",
+            "methods": ["POST"],
+            "dest": "backend/routes/server.js"
+        },
+        {
+            "src": "/api/v2/user/signin",
+            "methods": ["POST"],
+            "dest": "backend/routes/server.js"
+            }
+            ,{
+              
+            }
+    ]
+}
