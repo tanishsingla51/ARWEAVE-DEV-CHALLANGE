@@ -55,6 +55,10 @@ const Signin = () => {
           <a href="/signup" className="text-blue-500 hover:underline">
             Sign up
           </a>
+          <div>
+            <p>Demo Account : username = tanish@gmail.com </p>
+            <p className="ml-[118px]">password = 123456</p>
+          </div>
         </div>
       </div>
     </div>
