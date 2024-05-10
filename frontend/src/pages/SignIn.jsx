@@ -57,7 +57,7 @@ const Signin = () => {
           </a>
           <div>
             <p>Demo Account : username = tanish@gmail.com </p>
-            <p className="ml-[118px]">password = 123456</p>
+            <p className="ml-[118px]">password = tanish</p>
           </div>
         </div>
       </div>
