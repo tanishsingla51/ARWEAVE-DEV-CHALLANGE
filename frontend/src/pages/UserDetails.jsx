@@ -27,7 +27,7 @@ const AllPost = () => {
   return (
     <div className="app p-4 ">
       <div className="flex">
-        <h2 className="text-2xl font-bold mb-4 pr-64">User's Details</h2>
+        <h2 className="text-2xl font-bold mb-4 pr-64">Users Details</h2>
         <Link to="/update" className="text-white">
           <button className="bg-black p-3 border rounded-full">
             Update User
