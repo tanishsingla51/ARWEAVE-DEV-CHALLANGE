@@ -68,6 +68,10 @@ Description: User can follow other users and can get the their own followers as 
 
 To set up a minimal frontend to consume this API, follow these steps:
 
+## Technologies Used
+- React JS
+- Tailwindcss
+
 ### 1. Create a New Directory
 Create a new directory for your frontend project.
 
@@ -79,6 +83,7 @@ npm init -y
 
 npm install
 
+
 ### 4. Start the Server
  npm run dev 
 
@@ -89,5 +94,6 @@ Now, you should be able to access your frontend application on `http://localhost
 - Make sure MongoDB is running on your local machine or update the `MONGODB_URI` environment variable with the appropriate connection string.
 - You can customize the resource schema and endpoints according to your requirements.
 - Ensure proper error handling and validation in both backend and frontend code.
+- Ignore the deployed link its currently not working
 
 
