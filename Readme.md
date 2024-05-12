@@ -29,9 +29,9 @@ gh repo clone tanishsingla51/Stuneckt-Backend-Assignment
 ### 3. Set Environment Variables
 Create a `.env` file in the backend directory and specify the following variables:
 
-- MONGO_URI=mongodb+srv://tanishsingla51:9313111030Aa%40@cluster0.edee7nr.mongodb.net/stuneckt
-- PORT=4000
-- JWT_SECRET=stuneckt
+- MONGO_URI=`mongodb+srv://tanishsingla51:9313111030Aa%40@cluster0.edee7nr.mongodb.net/stuneckt`
+- PORT=`4000`
+- JWT_SECRET=`stuneckt`
 
 
 ### 4. Start the Server
@@ -41,26 +41,26 @@ Create a `.env` file in the backend directory and specify the following variable
 
 ## API Endpoints
 
-### POST /api/v2/user/signup
+### POST `/api/v2/user/signup`
 Description: Create a new user using username , password , firstName , lastName with all necessary endpoints 
 - used jsonwebtoken for authentication and a token is created using your unique _id and your jwt password 
 
-### POST /api/v2/user/signin
+### POST `/api/v2/user/signin`
 Description: User can sign in using their username and password
 - a token is created after sign in using your userId and jwt password
 
-### PUT /api/v2/user/update
+### PUT `/api/v2/user/update`
 - passed an authMiddleWare for authentication
 Description: User can update thier password or firstName or lastName whatever you want 
 
-### GET /api/v2/user/details
+### GET `/api/v2/user/details`
 - passed an authMiddleWare for authentication
 Description: Signed in User can get its basic details like username , firstName , lastName
 
-### GET /api/v2/user/bulk
+### GET `/api/v2/user/bulk`
 Description: User can get basic details of all the other users  like username , firstName , lastName
 
-### POST /api/v2/user/follow
+### POST `/api/v2/user/follow`
 Description: User can follow other users and can get the their own followers as well
 
 
