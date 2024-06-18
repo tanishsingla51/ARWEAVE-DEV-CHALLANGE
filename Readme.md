@@ -1,4 +1,4 @@
-# Stuneckt Backend Assignment README
+# ARWEAVE DEV CHALLENGE README
 
 ## Introduction
 This repository contains the backend code for a simple API. The API provides endpoints to perform various operations like :
