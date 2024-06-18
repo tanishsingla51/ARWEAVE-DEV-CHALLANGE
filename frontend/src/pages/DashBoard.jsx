@@ -8,7 +8,7 @@ const DashBoard = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center py-12">
           <h1 className="text-5xl font-semibold text-gray-200 mb-8">
-            STUNECKT
+            ARWEAVE
           </h1>
           <div className="w-full max-w-3xl">
             <div className="mb-8">

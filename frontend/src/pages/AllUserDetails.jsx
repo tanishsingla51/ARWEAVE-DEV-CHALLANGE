@@ -11,7 +11,7 @@ const AllUserDetails = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/api/v2/user/bulk?filter=${filter}`
+          `https://stuneckt-backend-assignment.vercel.app/api/v2/user/bulk?filter=${filter}`
         );
         setUsers(response.data.users); // Assuming the data key is 'users'
       } catch (error) {

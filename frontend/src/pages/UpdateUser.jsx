@@ -51,7 +51,7 @@ const UpdateUser = () => {
               className="w-full bg-blue-500 text-white font-semibold px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
               onClick={async () => {
                 await axios.put(
-                  "http://localhost:4000/api/v2/user/update",
+                  "https://stuneckt-backend-assignment.vercel.app/api/v2/user/update",
                   {
                     password: password || undefined,
                     firstName: firstName || undefined,

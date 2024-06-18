@@ -7,7 +7,7 @@ const UserPost = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/api/v2/post/all", {
+      .get("https://stuneckt-backend-assignment.vercel.app/api/v2/post/all", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

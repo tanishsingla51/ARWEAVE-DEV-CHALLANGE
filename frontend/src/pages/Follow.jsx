@@ -8,7 +8,7 @@ const Follow = ({ otherUserId, onFollow }) => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/v2/user/follow",
+        "https://stuneckt-backend-assignment.vercel.app/api/v2/user/follow",
         { otherUserId },
         {
           headers: {
