@@ -10,6 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@arweave-wallet-kit/arconnect-strategy": "^0.0.1-beta.4",
+    "@arweave-wallet-kit/core": "^0.0.1-beta.5",
+    "@arweave-wallet-kit/react": "^0.0.1-beta.3",
+    "@arweave-wallet-kit/styles": "^0.0.1-beta.3",
+    "@permaweb/aoconnect": "^0.0.56",
     "axios": "^1.6.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
