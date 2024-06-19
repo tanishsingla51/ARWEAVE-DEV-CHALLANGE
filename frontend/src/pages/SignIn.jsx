@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { ConnectButton, useConnection } from "@arweave-wallet-kit/react";
 
 const Signin = () => {
+  const { connected } = useConnection();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -11,7 +13,9 @@ const Signin = () => {
     <div className="bg-black text-white h-screen flex justify-center items-center">
       <div className="flex flex-col items-center">
         <div className="rounded-lg bg-gray-800 shadow-lg p-8">
-          <h1 className="text-3xl font-semibold text-white mb-4">Sign in</h1>
+          <h1 className="text-3xl font-semibold text-white mb-4">
+            WELCOME TO ARWEAVE
+          </h1>
           <p className="text-sm text-gray-400 mb-4">
             Enter your credentials to access your account
           </p>
@@ -51,10 +55,16 @@ const Signin = () => {
               Sign in
             </button>
           </div>
-          <p className="text-sm text-gray-400 mb-2">Do not have an account?</p>
-          <a href="/signup" className="text-blue-500 hover:underline">
-            Sign up
-          </a>
+          {/* <p className="text-sm text-gray-400 mb-2">Do not have an account?</p> */}
+
+          {connected ? (
+            navigate("/dashboard")
+          ) : (
+            <div className="gap-10 p-9 my-18 flex flex-col justify-center items-center">
+              <p>OR</p>
+              <ConnectButton accent="rgb(30,129,176)" />
+            </div>
+          )}
           <div>
             <p>Demo Account : username = tanish@gmail.com </p>
             <p className="ml-[118px]">password = tanish</p>
